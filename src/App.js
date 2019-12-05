@@ -1,4 +1,4 @@
-// 자 새롭게 시작해보자
+// 자 새롭게 시작해보자g
 import React from "react";
 import { Route } from "react-router-dom";
 

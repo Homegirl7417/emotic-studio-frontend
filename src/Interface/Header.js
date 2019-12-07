@@ -199,13 +199,6 @@ class Header extends React.Component {
                             >
                                 커뮤니티
                             </Link>
-
-                            <span className="nav__language">
-                                <img
-                                    src="/images/language-drop-down.svg"
-                                    alt="language"
-                                ></img>
-                            </span>
                         </nav>
                         <div className="header__language">
                             <i></i>

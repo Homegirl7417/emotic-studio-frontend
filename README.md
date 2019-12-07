@@ -1,1 +1,1 @@
-# EmoticStudio Froendend
+# EmoticStudio Frontend

@@ -39,12 +39,21 @@ function getEmojilist(emojiList){
 // API Actions
 
 function login(email,password){
+    let headers = new Headers();
+
+    headers.append('Content-Type', 'application/json');
+    headers.append('Accept', 'application/json');
+
+    headers.append('Access-Control-Allow-Origin', 'http://localhost:3000');
+    headers.append('Access-Control-Allow-Credentials', 'true');
+
+    headers.append('GET', 'POST', 'OPTIONS');
+    
+    headers.append("Content-Type", "application/json");
     return dispatch => {
         return fetch(`${API_URL}/signin`,{
             method:"POST",
-            headers:{
-                "Content-Type" : "application/json"
-            },
+            headers: headers,
             body: JSON.stringify({
                 email:email,
                 password:password
@@ -59,7 +68,8 @@ function login(email,password){
             }else{
                 return false;
             }
-        });
+        })
+        .catch(err => console.log(err));
     }
 }
 //function getUserinfo

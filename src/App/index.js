@@ -3,9 +3,9 @@ import { actionCreators as userAction } from "../redux/modules/users";
 import Container from "./container";
 
 const mapStateToProps = (state, ownProps) => {
-  const { User,isLoggedIn } = state;
+  const { users } = state;
   return {
-    User,isLoggedIn
+    isLoggedIn:users.isLoggedIn
   };
 };
 

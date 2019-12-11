@@ -13,6 +13,7 @@ class Container extends Component {
     birth:"", 
   };
   render() {
+    console.log("App container",this.props.isLoggedIn);
     return (
       <App 
       {...this.state}
@@ -35,6 +36,7 @@ class Container extends Component {
   _loginSubmit=async()=>{
     const { email, password } = this.state;
     const result = await this.props.login(email,password);
+    console.log(result)
     if(!result){
         alert("Fail");
     }

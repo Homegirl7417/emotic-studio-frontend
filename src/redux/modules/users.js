@@ -39,39 +39,36 @@ function getEmojilist(emojiList){
 // API Actions
 
 function login(email,password){
-    let headers = new Headers();
-
-    headers.append('Content-Type', 'application/json');
-    headers.append('Accept', 'application/json');
-
-    headers.append('Access-Control-Allow-Origin', 'http://localhost:3000');
-    headers.append('Access-Control-Allow-Credentials', 'true');
-
-    headers.append('GET', 'POST', 'OPTIONS');
-    
-    headers.append("Content-Type", "application/json");
+    console.log("redux email:",email," passward:",password);
     return dispatch => {
-        return fetch(`${API_URL}/signin`,{
-            method:"POST",
-            headers: headers,
-            body: JSON.stringify({
-                email:email,
-                password:password
-            })
+      return fetch(`${API_URL}/signin`,{
+        method:"POST",
+        headers:{
+          "Content-Type" : "application/json"
+        },
+        body: JSON.stringify({
+          email:email,
+          password:password
         })
-        .then(response => response.json())
-        .then(json =>{
-            if(json.token && json.User){
-                dispatch(setLogIn(json.token));
-                dispatch(setUser(json.User));
-                return true;
-            }else{
-                return false;
-            }
-        })
-        .catch(err => console.log(err));
+      })
+      .then(response => response.json())
+      .then(json =>{
+        console.log("로그인 정보 확인 토큰:"+json.token);
+        if(json.token && json.User){
+          dispatch(setLogIn(json.token));
+          dispatch(setUser(json.User));
+          console.log("here1")
+          return true;
+        }else{
+          console.log("here2")
+          return false;
+        }
+      })
+      .catch(error=>{
+        console.log(error)
+      })
     }
-}
+  }
 //function getUserinfo
 
 
@@ -98,6 +95,7 @@ function reducer (state = initialState, action){
 // reducer functions
 function applyLogIn(state,action){
     const { token } = action;
+    localStorage.setItem("jwt", token);
     return {
         ...state,
         isLoggedIn: true,

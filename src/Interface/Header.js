@@ -20,7 +20,8 @@ class Header extends React.Component {
 
 
     render() {
-        const {email,password,loginSubmit,isLoggedIn} = this.props
+        const {isLoggedIn} = this.props
+        console.log("Header isLoggedIn ",isLoggedIn)
         return (
             <header>
                 <div className="header">

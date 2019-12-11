@@ -17,10 +17,21 @@ class Container extends Component {
       <App 
       {...this.state}
       {...this.props}
-      loginSubmit={this.loginSubmit}
+      loginSubmit={this._loginSubmit}
+      changeEmail={this._changeEmail}
+      changePassword={this._changePassword}
+      handleInputChange={this._handleInputChange}
       />
     );
   }
+  
+  _handleInputChange = (e,target) => {
+    const { target: { value} } = e;
+    console.log(target,value)
+    this.setState({
+        [target]: value
+    });
+  };
   _loginSubmit=async()=>{
     const { email, password } = this.state;
     const result = await this.props.login(email,password);

@@ -1,16 +1,15 @@
-// 자 새롭게 시작해보자g
 import React from "react";
 import { Route } from "react-router-dom";
 
-import Header from "./Interface/Header";
-import Footer from "./Interface/Footer";
+import Header from "../Interface/Header";
+import Footer from "../Interface/Footer";
 
-import Home from "./Home";
-import GuideLine from "./GuideLine";
-import Faq from "./Faq";
-import MyStudio from "./MyStudio";
+import Home from "../Home";
+import GuideLine from "../GuideLine";
+import Faq from "../Faq";
+import MyStudio from "../MyStudio";
 
-import "./scss/App.scss";
+import "../scss/App.scss";
 
 const App = () => {
     return (

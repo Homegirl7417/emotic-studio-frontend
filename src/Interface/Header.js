@@ -63,7 +63,7 @@ function SimpleModal({ loginHandle }) {
 
     return (
         <span>
-            <button
+            <a
                 type="button"
                 onClick={handleOpen}
                 className="nav__guide-line nav-item"
@@ -73,7 +73,7 @@ function SimpleModal({ loginHandle }) {
                 }}
             >
                 마이 스튜디오
-            </button>
+            </a>
             <Modal
                 aria-labelledby="simple-modal-title"
                 aria-describedby="simple-modal-description"

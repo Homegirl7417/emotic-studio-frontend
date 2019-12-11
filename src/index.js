@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { ConnectedRouter } from "react-router-redux";
 import store, {history} from "./redux/configureStore";
 import { BrowserRouter } from "react-router-dom";
-import App from "./App";
+import App from "./App/index";
 
 console.log(store.getState());
 

@@ -4,6 +4,7 @@ import MainBanner from "./Home/MainBanner";
 import SubBanner from "./Home/SubBanner";
 import ProcessInfo from "./Home/ProcessInfo";
 import ContentsBanner from "./Home/ContentsBanner";
+import OtherService from "./Interface/OtherService";
 
 const contentsBannerData1 = {
     title: "EmoticBox는 다양한 이모티콘과 함께 합니다.",
@@ -76,6 +77,7 @@ function Home() {
                 data={contentsBannerData2}
                 backgroundColor="white"
             />
+            <OtherService/>
         </div>
     );
 }

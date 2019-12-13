@@ -1,10 +1,15 @@
 import React from "react";
-
+import PropTypes from 'prop-types';
 import "./scss/TextAreaContent.scss";
 
 import SubPageContentTemplate from "./SubPangeContentTemplate";
 
 class TextAreaContent extends React.Component {
+    static propTypes={
+        value:PropTypes.string.isRequired,
+        valueName:PropTypes.string.isRequired,
+        onChange:PropTypes.func.isRequired,
+    };
     render() {
         return (
             <SubPageContentTemplate
@@ -15,7 +20,9 @@ class TextAreaContent extends React.Component {
                     <textarea
                         className="text-area-content__input"
                         rows={this.props.rows}
-                    ></textarea>
+                        value={this.props.value}
+                        onChange={e=>this.props.onChange(e,this.props.valueName)}
+                    />
                 </div>
             </SubPageContentTemplate>
         );

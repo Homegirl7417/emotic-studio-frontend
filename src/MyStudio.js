@@ -1,6 +1,6 @@
 import React from "react";
 
-import StickerRegister from "./MyStudio/StickerRegister";
+import StickerRegister from "./MyStudio/StickerRegister/index";
 import StickerManage from "./MyStudio/StickerManagement";
 import OneStickerManagement from "./MyStudio/OneStickerManagement";
 

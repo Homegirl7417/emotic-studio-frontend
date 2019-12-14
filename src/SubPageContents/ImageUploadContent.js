@@ -70,18 +70,19 @@ class ImageUploadContent extends React.Component {
                             );
                         } else {
                             return (
-                                <div
+                                <>
+                                <label
                                     className="image-upload-content__grid-element"
                                     key={key}
                                 >
-                                    <FileDrop
-                                        onDrop={() => this.imageDrop(idx)}
-                                    >
-                                        <div className="grid-element__plus-icon">
-                                            +
-                                        </div>
-                                    </FileDrop>
-                                </div>
+                            
+                                    <div className="grid-element__plus-icon">
+                                        +
+                                    </div>
+                                    <input className="grid-element__input-element" type="file" id="upload-button" style={{ display: 'none' }}  />
+                                </label>
+                                
+                                </>
                             );
                         }
                     })}
@@ -90,5 +91,5 @@ class ImageUploadContent extends React.Component {
         );
     }
 }
-
+//onChange={e=>this.props._handleImageChange(e,this.state.imageOn)}
 export default ImageUploadContent;

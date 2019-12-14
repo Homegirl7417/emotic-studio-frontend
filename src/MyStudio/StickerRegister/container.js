@@ -13,7 +13,15 @@ class Container extends Component {
     keyword:"",
     price:0,
     summary:"",
-    language:""
+    language:"",
+    isOnlyImage:null,
+    isKorean:null,
+    isEnglish:null,
+    isJapanese:null,
+    isSpanish:null,
+    isGerman:null,
+    isVietnamese:null,
+    stickers:[],
   };
   render(){
     return (
@@ -21,6 +29,7 @@ class Container extends Component {
       {...this.state}
       {...this.props}
       handleInputChange={this._handleInputChange}
+      handleImageChange={this._handleImageChange}
       />
     );
   }
@@ -33,6 +42,19 @@ class Container extends Component {
     }else{
         alert("Error. Please try again");
     }
+  }
+  _handleImageChange(e,idx) {
+    e.preventDefault();
+
+    let file = e.target.files[0];
+    
+    let exStickers=this.state.stickers;
+    exStickers[idx]=file;
+    this.setState({
+        stickers:exStickers
+    })
+    console.log("여기 file::::",file)
+    //reader.readAsDataURL(file)
   }
   _handleInputChange = (e,target) => {
     const { target: { value} } = e;

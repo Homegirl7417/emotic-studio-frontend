@@ -20,6 +20,7 @@ class StickerRegisterPart1 extends React.Component {
         summary:PropTypes.string.isRequired,
         language:PropTypes.string.isRequired,
         handleInputChange:PropTypes.func.isRequired,
+        handleImageChange:PropTypes.func.isRequired
     };
     constructor() {
         super();
@@ -96,7 +97,7 @@ class StickerRegisterPart1 extends React.Component {
 
 const stickerRegisterComponentsList = [
     <StickerRegisterPart1 />,
-    <ImageUploadContent title="스티커 파일 업로드"></ImageUploadContent>
+    <ImageUploadContent title="스티커 파일 업로드"/>
 ];
 
 const navigationData = [

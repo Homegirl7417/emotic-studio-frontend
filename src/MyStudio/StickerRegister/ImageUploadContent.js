@@ -1,9 +1,7 @@
 import React from "react";
 
 import FileDrop from "react-file-drop";
-
-import "./scss/ImageUploadContent.scss";
-
+import "../scss/ImageUploadContent.scss"
 class ImageUploadContent extends React.Component {
     constructor() {
         super();

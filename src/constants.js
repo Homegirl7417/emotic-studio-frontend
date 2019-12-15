@@ -1,4 +1,4 @@
-export const API_URL = "http://localhost:8001";
+export default API_URL = "http://localhost:8001";
 
 
 //https://www.codementor.io/microsem31/react-native-google-and-facebook-authentication-cohpznykf

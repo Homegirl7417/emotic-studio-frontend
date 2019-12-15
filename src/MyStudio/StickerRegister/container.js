@@ -9,7 +9,7 @@ class Container extends Component {
     isAnimated:null,
     isTranslate:null,
     language:"",
-    name:"",
+    name:"tpr",
     keyword:"",
     price:0,
     summary:"",

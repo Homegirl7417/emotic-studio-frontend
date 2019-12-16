@@ -43,17 +43,26 @@ class Container extends Component {
         alert("Error. Please try again");
     }
   }
-  _handleImageChange(e,idx) {
+  _handleImageChange = (e,idx) => {
     e.preventDefault();
-
     let file = e.target.files[0];
-    
-    let exStickers=this.state.stickers;
-    exStickers[idx]=file;
-    this.setState({
-        stickers:exStickers
-    })
-    console.log("여기 file::::",file)
+    console.log(file);
+    if(!file){
+      return 0;
+    }
+    if( file.type.slice(file.type.indexOf("/")+1) != "png" ){
+      alert("파일은 APNG 형태로 업로드 해주세요");
+    } 
+    else if(file.size>500000){
+      alert("파일 용량이 너무 큽니다. 파일 하나당 500kb 이하로 맞춰 주세요");
+    }else{
+      let exStickers=this.state.stickers;
+      exStickers[idx]=file;
+      this.setState({
+          stickers:exStickers
+      });
+      console.log("파일 업로드 완료",file)
+    }
     //reader.readAsDataURL(file)
   }
   _handleInputChange = (e,target) => {
@@ -64,11 +73,22 @@ class Container extends Component {
     });
   };
   _proposalNewEmoji = () =>{
-    const { isAnimated, name, keyword, price, summary, language } = this.state;
+    const { isAnimated, name, keyword, price, summary, language, stickers } = this.state;
+    const formData = new FormData()
+
+    stickers.forEach((sticker, i) => {
+      formData.append('emoji', sticker)
+    })
+    formData.append("isAnimated",isAnimated ? 1:0);
+    formData.append("name",name);
+    formData.append("summary",summary);
+    formData.append("keyword",keyword);
+    formData.append("price",price);
+    
     fetch(`${API_URL}/proposal/new`,{
         method:"POST",
         headers:{
-            "Content-Type" : "application/json",
+            "Content-Type": "multipart/form-data",
             "Authorization": `Bearer ${this.props.token}`,
         },
         body: JSON.stringify({

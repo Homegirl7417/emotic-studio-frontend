@@ -44,6 +44,12 @@
             color: #ea5433;
         }
     }
+    .grid-element__pre-view {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
     .grid-element__plus-icon {
         display: flex;
         justify-content: center;

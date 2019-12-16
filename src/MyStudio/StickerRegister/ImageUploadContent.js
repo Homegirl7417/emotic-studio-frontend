@@ -1,8 +1,12 @@
 import React from "react";
-
+import PropTypes from 'prop-types';
 import FileDrop from "react-file-drop";
 import "../scss/ImageUploadContent.scss"
 class ImageUploadContent extends React.Component {
+    static propTypes={
+        handleImageChange:PropTypes.func.isRequired,
+        stickers:PropTypes.array.isRequired,
+    };
     constructor() {
         super();
         this.state = {
@@ -46,6 +50,7 @@ class ImageUploadContent extends React.Component {
     }
 
     render() {
+        const { handleImageChange,stickers } = this.props;
         return (
             <div className="image-upload-content">
                 <div className="image-upload-content__title">
@@ -57,14 +62,26 @@ class ImageUploadContent extends React.Component {
                 </div>
                 <div className="image-upload-content__grid-wrapper">
                     {[...Array(24).keys()].map((key, idx) => {
-                        if (this.state.imageOn[idx] === true) {
+                        if (stickers[idx]) {
                             return (
-                                <img
-                                    src={"/images/lion/" + (idx + 1) + ".gif"}
-                                    alt="img"
-                                    key={key}
+                                <>
+                                <label
                                     className="image-upload-content__grid-element"
-                                ></img>
+                                    key={key}
+                                >
+                                    <div className="grid-element__plus-icon">
+                                        <img
+                                            src={URL.createObjectURL(stickers[idx])}
+                                            alt="img"
+                                            key={key}
+                                            className="grid-element__pre-view"
+                                        ></img>
+                                    </div>
+                                    <input className="grid-element__input-element" type="file" id="upload-button" style={{ display: 'none' }} onChange={e=>handleImageChange(e,idx)}/>
+                                </label>
+                                
+                                </>
+                                
                             );
                         } else {
                             return (
@@ -77,7 +94,7 @@ class ImageUploadContent extends React.Component {
                                     <div className="grid-element__plus-icon">
                                         +
                                     </div>
-                                    <input className="grid-element__input-element" type="file" id="upload-button" style={{ display: 'none' }}  />
+                                    <input className="grid-element__input-element" type="file" id="upload-button" style={{ display: 'none' }} onChange={e=>handleImageChange(e,idx)}/>
                                 </label>
                                 
                                 </>
@@ -89,5 +106,5 @@ class ImageUploadContent extends React.Component {
         );
     }
 }
-//onChange={e=>this.props._handleImageChange(e,this.state.imageOn)}
+//
 export default ImageUploadContent;

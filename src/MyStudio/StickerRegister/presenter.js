@@ -10,6 +10,7 @@ import SubPageCompleteButton from "../../SubPageContents/SugPageCompleteButton";
 
 class StickerRegister extends React.Component {
     static propTypes={
+        stickers:PropTypes.array.isRequired,
         isSubmit:PropTypes.bool.isRequired,
         isAnimated:PropTypes.bool.isRequired,
         isTranslate:PropTypes.bool.isRequired,
@@ -36,7 +37,7 @@ class StickerRegister extends React.Component {
 
 const stickerRegisterComponentsList = (props) => [
     <StickerRegisterPart1 handleInputChange={props.handleInputChange} name={props.name} keyword={props.keyword} summary={props.summary}/>,
-    <ImageUploadContent title="스티커 파일 업로드"/>
+    <ImageUploadContent title="스티커 파일 업로드" handleImageChange={props.handleImageChange} stickers={props.stickers}/>
 ];
 
 const navigationData = [

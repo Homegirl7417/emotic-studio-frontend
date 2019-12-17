@@ -7,17 +7,17 @@ import Checkbox from "@material-ui/core/Checkbox";
 
 class CheckBoxContent extends React.Component {
   render() {
+    const {handleCheck,checkedValues,checkingValue} = this.props;
     return (
       <SubPageContentTemplate
         title={this.props.title}
         isRequire={this.props.isRequire}
       >
         <div className="checkbox-content">
-          {console.log(this.props)}
-          {this.props.checkBox.map(data => {
+          {this.props.checkBox.map((data,index) => {
             return (
               <div className="checkbox-content__ckbox-element">
-                <Checkbox color="default" />
+                <Checkbox color="default" onChange={()=>handleCheck(data)} checked={checkingValue(data) }/>
                 <span className="checkbox-content__element-name">{data}</span>
               </div>
             );

@@ -3,33 +3,32 @@ import PropTypes from "prop-types";
 import StickerRegisterPart1 from "./presenter";
 const API_URL = "http://localhost:8001";
 
+const supportingLanguage = ["Only Image","한국어","영어","일본어","스페인어","독일어","베트남어","기타"];
+const priceList = ["무료", "0.9달러", "1.9달러"];
+const yesOrNo = ["예", "아니요"];
+
 class Container extends Component {
   state = {
     isSubmit:false,
-    isAnimated:null,
-    isTranslate:null,
     language:"",
-    name:"tpr",
+    name:"",
     keyword:"",
     price:0,
     summary:"",
     language:"",
-    isOnlyImage:null,
-    isKorean:null,
-    isEnglish:null,
-    isJapanese:null,
-    isSpanish:null,
-    isGerman:null,
-    isVietnamese:null,
     stickers:[],
+    checkedValues:[],
   };
   render(){
+    
     return (
       <StickerRegisterPart1 
       {...this.state}
       {...this.props}
       handleInputChange={this._handleInputChange}
       handleImageChange={this._handleImageChange}
+      handleCheck={this._handleCheck}
+      checkingValue={this._checkingValue}
       />
     );
   }
@@ -43,10 +42,27 @@ class Container extends Component {
         alert("Error. Please try again");
     }
   }
+  _checkingValue = data =>{
+    const result = (this.state.checkedValues.indexOf( data )!=-1)?true : false ; 
+    console.log(data,result)
+    return result;
+  }
+  _handleCheck = (data)=>{
+    let exCheckedValues = this.state.checkedValues;
+    let isCheck = exCheckedValues.indexOf( data )
+    if(isCheck != -1){
+      exCheckedValues.splice(isCheck, 1);
+    }else{
+      exCheckedValues.push(data);
+    }
+    this.setState({
+      checkedValues:exCheckedValues
+    });
+
+  }
   _handleImageChange = (e,idx) => {
     e.preventDefault();
     let file = e.target.files[0];
-    console.log(file);
     if(!file){
       return 0;
     }
@@ -61,13 +77,11 @@ class Container extends Component {
       this.setState({
           stickers:exStickers
       });
-      console.log("파일 업로드 완료",file)
     }
     //reader.readAsDataURL(file)
   }
   _handleInputChange = (e,target) => {
     const { target: { value} } = e;
-    console.log(target,value)
     this.setState({
         [target]: value
     });

@@ -11,9 +11,8 @@ import SubPageCompleteButton from "../../SubPageContents/SugPageCompleteButton";
 class StickerRegister extends React.Component {
     static propTypes={
         stickers:PropTypes.array.isRequired,
+        checkedValues:PropTypes.array.isRequired,
         isSubmit:PropTypes.bool.isRequired,
-        isAnimated:PropTypes.bool.isRequired,
-        isTranslate:PropTypes.bool.isRequired,
         language:PropTypes.string.isRequired,
         name:PropTypes.string.isRequired,
         keyword:PropTypes.string.isRequired,
@@ -21,7 +20,9 @@ class StickerRegister extends React.Component {
         summary:PropTypes.string.isRequired,
         language:PropTypes.string.isRequired,
         handleInputChange:PropTypes.func.isRequired,
-        handleImageChange:PropTypes.func.isRequired
+        handleImageChange:PropTypes.func.isRequired,
+        handleCheck:PropTypes.func.isRequired,
+        checkingValue:PropTypes.func.isRequired
     };
     render() {
         return (
@@ -36,7 +37,15 @@ class StickerRegister extends React.Component {
 }
 
 const stickerRegisterComponentsList = (props) => [
-    <StickerRegisterPart1 handleInputChange={props.handleInputChange} name={props.name} keyword={props.keyword} summary={props.summary}/>,
+    <StickerRegisterPart1 
+        handleInputChange={props.handleInputChange} 
+        name={props.name} 
+        keyword={props.keyword} 
+        summary={props.summary} 
+        checkedValues={props.checkedValues}
+        handleCheck={props.handleCheck}
+        checkingValue={props.checkingValue}
+    />,
     <ImageUploadContent title="스티커 파일 업로드" handleImageChange={props.handleImageChange} stickers={props.stickers}/>
 ];
 

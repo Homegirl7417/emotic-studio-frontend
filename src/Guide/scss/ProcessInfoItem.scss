@@ -1,15 +1,17 @@
 .process-item {
-    padding: 10px;
+    padding: 20px;
+    margin-top: 10px;
     font-family: "Noto Sans KR", sans-serif;
     font-weight: 300;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 10px 6px -6px #777;
+    width: 230px;
     &__paragraph {
-        font-size: 0.7rem;
+        font-size: 0.8rem;
     }
     img {
-        height: 50px;
+        height: 70px;
         display: block;
         margin: 0px auto;
         margin-bottom: 10px;
@@ -20,12 +22,13 @@
         &-name {
             font-family: "Noto Sans KR", sans-serif;
             font-weight: 400;
-            font-size: 0.7rem;
+            font-size: 1.2rem;
             margin-left: 10px;
         }
     }
     &__order-number {
         color: #f8c700;
         font-weight: 700;
+        font-size: 1rem;
     }
 }

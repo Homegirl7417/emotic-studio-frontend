@@ -1,7 +1,12 @@
 .footer {
+    width: 100%;
     margin-top: 50px;
     font-family: "Noto Sans KR", sans-serif;
     font-weight: 300;
+    display: block;
+    position: relative;
+    bottom: 0;
+    left: 0;
     &__top {
         background-color: #424347;
         display: flex;

@@ -56,7 +56,7 @@ function ProcessInfoItem({ order, title, paragraph, picture }) {
 function ProcessInfo() {
     return (
         <div className="process-info">
-            <h3 className="process-info__title">등록 절차</h3>
+            <h2 className="process-info__title">등록 절차</h2>
             <ul className="process-info__process-list">
                 {processInfoItemData.map((data, idx) => {
                     return (

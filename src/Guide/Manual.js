@@ -50,6 +50,7 @@ class Manual extends React.Component {
                         Animated Sticker
                     </button>
                 </div>
+                <div className="manual__guideline"></div>
             </div>
         );
     }

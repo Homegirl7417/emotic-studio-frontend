@@ -2,8 +2,14 @@
     box-sizing: border-box;
     margin: 0 auto;
     margin-top: 70px;
-    width: 900px;
+    padding: 30px 20px;
+    width: 1000px;
+    height: 100%;
+    &__title {
+        margin-left: 20px;
+    }
     &__process-list {
-        margin-bottom: 1000px;
+        margin-bottom: 200px;
+        grid-row-gap: 50px;
     }
 }

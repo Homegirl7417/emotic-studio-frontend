@@ -1,7 +1,7 @@
 .manual {
     padding-top: 20px;
     margin: 0 auto;
-    width: 70%;
+    width: 1200px;
     &__btn-group {
         font-family: "Noto Sans KR", sans-serif;
         font-weight: 300;
@@ -9,6 +9,7 @@
         display: flex;
         justify-content: space-around;
         margin-top: 20px;
+        height: 60px;
     }
     &__btn {
         background: none;
@@ -28,11 +29,75 @@
         border-bottom: 2px solid #de3621;
     }
     &__guideline {
-        width: 80%;
-        height: 100rem;
+        width: 70%;
+        height: 100%;
         background-color: white;
-        border:0.5px solid gray;
-        padding: 10px;
+        border:0.5px solid #FFFFFF;
         margin: 30px auto;
+
+        &__title {
+            font-size: 30px;
+            margin: 40px;
+        }
+        &__stickerInfo {
+            table {
+                width: 90%;
+                height: 120px;
+                margin: 50px auto;
+                font-size: 18px;
+                text-align: center;
+                border-collapse: collapse;
+                table-layout: fixed;
+            }
+            tr {
+                height: 50px;
+            }
+            th {
+                border-bottom: 1px solid #E2E2E2;
+                margin: 10px;
+            }
+        }
+        &__noticeInfo {
+            color: #626262;
+            display: flex;
+            align-items: center;
+            text-align: left;
+            vertical-align: middle;
+        }
+        &__imageInfo {
+            margin: 0 auto;
+        }
+        &__imageWrap {
+            width: 90%;
+            background-color: #EDEDF2;
+            margin: 20px auto;
+            text-align: center;
+        }
+        &__imageSample {
+            display: inline-block;
+            margin: 30px 20px 0px 20px;
+
+            img {
+                width: 250px;
+                margin: 0 30px;
+            }
+            div {
+                margin: 20px;
+                font-size: 18px;
+            }
+        }
+        &__otherInfo {
+            margin: 30px auto;
+        }
+    }
+    
+    li {
+        color: #626262;
+        font-size: 16px;
+        line-height: 35px;
+    }
+    h3 {
+        margin: 20px auto;
+        padding-inline-start: 40px;
     }
 }

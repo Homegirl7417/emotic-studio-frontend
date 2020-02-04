@@ -1,15 +1,16 @@
 .process-info {
     box-sizing: border-box;
     margin: 0 auto;
-    margin-top: 70px;
-    padding: 30px 20px;
-    width: 1000px;
+    margin-top: 50px;
+    width: 1050px;
     height: 100%;
     &__title {
         margin-left: 20px;
     }
     &__process-list {
         margin-bottom: 100px;
-        grid-row-gap: 50px;
+        grid-row-gap: 30px;
+        grid-column-gap: 50px;
+        margin: 0 auto;
     }
 }

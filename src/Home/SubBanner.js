@@ -6,7 +6,7 @@ function SubBanner() {
     return (
             <div className="sub-banner">
                 <div className="sub-banner__imagebox">
-                    <img className="sub-banner__image" src="/images/sub-banner.png"></img>
+                    <img className="sub-banner__image" src="/images/sub-banner.png" ></img>
                 </div>
                 <div className="sub-banner__textbox">
                     <h2 className="sub-banner__title">

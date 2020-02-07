@@ -3,6 +3,9 @@ import React from "react";
 import StickerRegister from "./MyStudio/StickerRegister/index";
 import StickerManage from "./MyStudio/StickerManagement";
 import OneStickerManagement from "./MyStudio/OneStickerManagement";
+import OneStickerExamine from './MyStudio/OneStickerExamine';
+import AccountManagement from "./MyStudio/AccountManagement/presenter.js";
+import Wallet from "./MyStudio/Wallet/presenter.js";
 
 import "./scss/MyStudio.scss";
 
@@ -24,8 +27,13 @@ class MyStudio extends React.Component {
                 ></Route>
                 <Route
                     exact
-                    path="/mystudio/sticker-lion"
-                    component={OneStickerManagement}
+                    path="/mystudio/account-manage"
+                    component={AccountManagement}
+                ></Route>
+                <Route
+                    exact
+                    path="/mystudio/wallet"
+                    component={Wallet}
                 ></Route>
             </div>
         );

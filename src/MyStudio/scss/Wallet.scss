@@ -1,0 +1,56 @@
+.wallet {
+    &__propertyItem {
+        display: grid;
+        grid-column-gap: 20px;
+        grid-template-columns: 120px 600px;
+        grid-row-gap: 30px;
+        margin: 20px auto;
+
+    }
+    &__propertyIndex {
+        color: #AAAAAA;
+        text-align: end;
+        font-size: 1rem;
+    }
+    &__propertyValue {
+        text-align: start;
+        font-size: 1rem;
+    }
+    &__withdraw {
+        margin: 0 auto;
+        table {
+            margin: 30px auto;
+            text-align: center;
+        }
+        th, td {
+            width: 150px;
+        }
+        tbody {
+            margin-top: 20px;
+        }
+    }
+    &__withdrawIndex {
+        color: #AAAAAA;
+        font-size: 1rem;
+    }
+}
+
+.calender {
+    text-align: center;
+    &__header {
+        button {
+            cursor: pointer;
+            outline: none;
+            display: inline-flex;
+            background-color: transparent;
+            border: none;
+            font-size: 1.2rem;
+        }
+    }
+    &__day {
+        display: inline-block;
+        font-size: 1.2rem;
+        width: 8rem;
+        text-align: center;
+    }
+}

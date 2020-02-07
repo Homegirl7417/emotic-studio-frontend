@@ -9,7 +9,7 @@ import ProcessInfo from "./Guide/ProcessInfo";
 function GuideLine() {
     return (
         <div className="guide-line">
-            <About />
+            <About/>
             <Manual />
             <ProcessInfo />
         </div>

@@ -1,8 +1,7 @@
 import React from "react";
-
 import SubPageTemplate from "../SubPageTemplate";
-
 import StickerListView from "../SubPageContents/StickerListView";
+import { Link } from 'react-router-dom'
 
 class StickerManagementRejected extends React.Component {
     constructor() {
@@ -74,7 +73,8 @@ class StickerManagementPending extends React.Component {
                         </div>
                     }
                     data={this.state.data}
-                ></StickerListView>
+                >
+                </StickerListView>
             </div>
         );
     }

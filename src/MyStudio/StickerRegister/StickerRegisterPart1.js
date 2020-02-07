@@ -4,14 +4,24 @@ import CheckBoxContent from "../../SubPageContents/CheckBoxContent";
 import TextAreaContent from "../../SubPageContents/TextAreaContent";
 
 
-const stickerGenreCheckBoxData = ["Sticker", "Animated Sticker"]
+const stickerGenreCheckBoxData = ["Sticker", "Animated Sticker"];
+const stickerCounterCheckBoxData = ["16종","24종","32종","40종"];
 const StickerRegisterPart1 = (props) =>{
+    console.log(props);
     return (
         <div className="sticker-register">
                 <CheckBoxContent
                     title="스티커 종류"
                     isRequire={true}
                     checkBox={stickerGenreCheckBoxData}
+                    handleCheck={props.handleCheck}
+                    checkedValues={props.checkedValues}
+                    checkingValue={props.checkingValue}
+                />
+                <CheckBoxContent
+                    title="스티커 개수"
+                    isRequire={true}
+                    checkBox={stickerCounterCheckBoxData}
                     handleCheck={props.handleCheck}
                     checkedValues={props.checkedValues}
                     checkingValue={props.checkingValue}
@@ -64,6 +74,25 @@ const StickerRegisterPart1 = (props) =>{
                     checkedValues={props.checkedValues}
                     checkingValue={props.checkingValue}
                 ></CheckBoxContent>
+                {
+                    props.checkedValues[0] === "예"
+                    ? (
+                        <CheckBoxContent
+                            title={
+                                <span>
+                                    <div style={{ fontSize : "0.7rem" }}>(복수선택가능)</div>
+                                    <span>요청 목록</span>
+                                </span>
+                            }
+                            isRequire={true}
+                            checkBox={["영어", "일본어","스페인어"]}
+                            handleCheck={props.handleCheck}
+                            checkedValues={props.checkedValues}
+                            checkingValue={props.checkingValue}
+                        ></CheckBoxContent>
+                    )
+                    : null
+                }
                 <CheckBoxContent
                     title="약관 확인"
                     isRequire={true}

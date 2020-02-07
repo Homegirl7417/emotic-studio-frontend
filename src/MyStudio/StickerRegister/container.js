@@ -67,7 +67,7 @@ class Container extends Component {
       return 0;
     }
     if( file.type.slice(file.type.indexOf("/")+1) != "png" ){
-      alert("파일은 APNG 형태로 업로드 해주세요");
+      alert("파일은 PNG 형태로 업로드 해주세요");
     } 
     else if(file.size>500000){
       alert("파일 용량이 너무 큽니다. 파일 하나당 500kb 이하로 맞춰 주세요");

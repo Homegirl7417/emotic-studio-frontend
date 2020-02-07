@@ -1,0 +1,40 @@
+.account-management {
+    &__profileList {
+        width: 800px;
+        margin-bottom: 100px;
+    }
+    &__profileItem {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-row-gap: 30px;
+        grid-column-gap: 60px;
+        margin: 20px auto;
+    }
+    &__index {
+        width: 130px;
+        color: #AAAAAA;
+        font-size: 1rem;
+        margin: auto 0;
+        text-align: end;
+    }
+    &__account {
+        width: 600px;
+        height: 30px;
+        line-height: 30px;
+        color: #000000;
+        font-size: 1rem;
+        text-align: left;
+        background-color: #FDFDFD;
+        border: 0.5px solid #EBEBEB;
+        border-radius: 10px;
+        padding: 10px;
+    }
+    h3 {
+        margin-bottom: 40px;
+    }
+}
+
+#whiteStyle {
+    background-color: #FFFFFF;
+    border: none;
+}

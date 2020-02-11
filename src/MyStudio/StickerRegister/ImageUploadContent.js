@@ -105,5 +105,5 @@ class ImageUploadContent extends React.Component {
         );
     }
 }
-//
+
 export default ImageUploadContent;

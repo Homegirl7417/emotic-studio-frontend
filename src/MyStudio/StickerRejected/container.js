@@ -20,10 +20,9 @@ class Container extends Component {
     checkedValues:[],
   };
   render(){
-    
     return (
       <>
-      {console.log("스티커등록의 container.js/ stickerRegisterpart1에 넘겨주는 state와props들: ",this.state, this.props)}
+      {console.log("스티커반려의 container.js/ stickerRegisterpart1에 넘겨주는 state와props들: ",this.state, this.props)}
       <StickerRegisterPart1 
       {...this.state}
       {...this.props}

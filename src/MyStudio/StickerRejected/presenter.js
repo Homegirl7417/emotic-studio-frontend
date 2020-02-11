@@ -7,12 +7,13 @@ import ImageUploadContent from "./ImageUploadContent";
 import SubPageTemplate from "../../SubPageTemplate";
 import StickerRegisterPart1 from "./StickerRegisterPart1";
 import SubPageCompleteButton from "../../SubPageContents/SugPageCompleteButton";
+import RejectedReason from './StickerRejectedReason.js';
 
-class StickerRegister extends React.Component {
+class StickerRejected extends React.Component {
     constructor(props) {
         super(props);
     
-        console.log("스티커 등록의 presenter.js의 props:",this.props)
+        console.log("스티커 반려의 presenter.js의 props:",this.props)
     }
     static propTypes={
         stickers:PropTypes.array.isRequired,
@@ -32,14 +33,18 @@ class StickerRegister extends React.Component {
     render() {
         return (
             <SubPageTemplate
-            header="마이 스튜디오"
-            data={navigationData}
-            contentsJSX={stickerRegisterComponentsList(this.props)}
-            completeButton={<SubPageCompleteButton text="제안하기" id="StickerRejectedButton"/>}
+                header="마이 스튜디오"
+                data={navigationData}
+                contentsJSX={[
+                    <RejectedReason />,
+                    stickerRegisterComponentsList(this.props)
+                ]}
+                completeButton={<SubPageCompleteButton id="stickerRejectedButton" text="다시 제안하기" />}
             />
         );
     }
 }
+
 
 const stickerRegisterComponentsList = (props) => [
     <StickerRegisterPart1 
@@ -73,4 +78,4 @@ const navigationData = [
     }
 ];
 
-export default StickerRegister;
+export default StickerRejected;

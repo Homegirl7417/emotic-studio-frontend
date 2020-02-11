@@ -7,10 +7,9 @@ import TextAreaContent from "../../SubPageContents/TextAreaContent";
 const stickerGenreCheckBoxData = ["Sticker", "Animated Sticker"];
 const stickerCounterCheckBoxData = ["16종","24종","32종","40종"];
 const StickerRegisterPart1 = (props) =>{
-    console.log(props);
+    console.log("스티커반려의 props: ",props);
     return (
         <div className="sticker-register">
-            {console.log("스티커등록의 props: ",props)}
                 <CheckBoxContent
                     title="스티커 종류"
                     isRequire={true}

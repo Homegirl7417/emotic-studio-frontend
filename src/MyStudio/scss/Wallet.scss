@@ -33,6 +33,19 @@
         color: #AAAAAA;
         font-size: 1rem;
     }
+
+    &__paypal {
+        //임시로 만든 공간. 
+        //높이는 내부 요소에 따라 자동으로 늘어나므로 내부 요소 추가 후 hight 지우기.
+        height: 300px;
+    }
+
+    &__account {
+        //임시로 만든 공간. 
+        //높이는 내부 요소에 따라 자동으로 늘어나므로 내부 요소 추가 후 hight 지우기.
+        height: 300px;
+    }
+
 }
 
 .calender {

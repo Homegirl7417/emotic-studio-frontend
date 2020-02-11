@@ -196,21 +196,67 @@ const navigationData = [
     }
 ];
 
-export default () => {
-    return (
-        <SubPageTemplate
-            header="마이 스튜디오"
-            data={navigationData}
-            contentsJSX={[
-                <StickerManagementInformation />,
-                <StickerDetailView title="스티커 목록"></StickerDetailView>,
-                <ChartContent title="국가별 판매량">
-                    <CountrySellChart></CountrySellChart>
-                </ChartContent>,
-                <ChartContent title="연령별 판매량">
-                    <AgeSellChart></AgeSellChart>
-                </ChartContent>
-            ]}
-        ></SubPageTemplate>
-    );
-};
+class StickerRegistered extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            sellingState: true
+        };
+      }
+
+    sellingStateChange = () => {
+        this.setState({
+            sellingState: !this.state.sellingState
+        })
+    }
+    render() {
+        return (
+            <div>
+                <SubPageTemplate
+                header="마이 스튜디오"
+                data={navigationData}
+                contentsJSX={[
+                    <StickerManagementInformation />,
+                    <StickerDetailView title="스티커 목록"></StickerDetailView>,
+                    <ChartContent title="국가별 판매량">
+                        <CountrySellChart></CountrySellChart>
+                    </ChartContent>,
+                    <ChartContent title="연령별 판매량">
+                        <AgeSellChart></AgeSellChart>
+                    </ChartContent>
+                ]}
+                >
+                </SubPageTemplate>
+                <div 
+                    clasName="sellingButton"
+                    style={{
+                        width: "1000px",
+                        margin: "20px auto",
+                        textAlign: "right",
+                        cursor: "pointer"
+                    }}
+                >
+                        {
+                            this.state.sellingState
+                                ?<span onClick={this.sellingStateChange}>판매중지하기</span>
+                                :(  
+                                    <div>
+                                        <span 
+                                            onClick={this.sellingStateChange}
+                                            style={{
+                                                margin: "0 10px"
+                                            }}
+                                        >
+                                            판매시작하기
+                                        </span>
+                                        <span>삭제하기</span>
+                                    </div>
+                                )
+                        }
+                </div>
+            </div>
+        );
+    }
+
+}
+export default StickerRegistered;

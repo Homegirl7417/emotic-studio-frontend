@@ -48,7 +48,6 @@ class ImageUploadContent extends React.Component {
             ...this.setState
         });
     }
-
     render() {
         const { handleImageChange,stickers } = this.props;
         return (
@@ -106,5 +105,5 @@ class ImageUploadContent extends React.Component {
         );
     }
 }
-//
+
 export default ImageUploadContent;

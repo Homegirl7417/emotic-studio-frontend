@@ -1,0 +1,13 @@
+.stickerRejected {
+    &__title {
+        display: inline;
+    }
+    &__reason {
+        width: 600px;
+        height: 200px;
+        margin: 0 auto;  
+        background-color: #FDFDFD;
+        border: 1px solid #EBEBEB;
+        border-radius: 10px;      
+    }
+}

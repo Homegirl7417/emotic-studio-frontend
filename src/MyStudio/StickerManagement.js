@@ -10,10 +10,12 @@ class StickerManagementRejected extends React.Component {
             data: [
                 {
                     title: "달려라, 고양이!",
-                    link: "/images/emoji/cat.gif"
+                    link: "/images/emoji/cat.gif",
+                    index: 0,
+                    type: "rejected"
                 }
             ]
-        };
+        }
     }
     render() {
         return (
@@ -48,7 +50,9 @@ class StickerManagementPending extends React.Component {
             data: [
                 {
                     title: "가엽고 어린 튜브",
-                    link: "/images/emoji/duck.gif"
+                    link: "/images/emoji/duck.gif",
+                    index: 0,
+                    type: "pending"
                 }
             ]
         };
@@ -73,8 +77,7 @@ class StickerManagementPending extends React.Component {
                         </div>
                     }
                     data={this.state.data}
-                >
-                </StickerListView>
+                /> 
             </div>
         );
     }
@@ -87,11 +90,15 @@ class StickerManagementRegistered extends React.Component {
             data: [
                 {
                     title: <div>헬로! 라이언 </div>,
-                    link: "/images/lion/1.gif"
+                    link: "/images/lion/1.gif",
+                    index: 0,
+                    type: "registered"
                 },
                 {
                     title: "단팥빵의 하루",
-                    link: "/images/emoji/bread.gif"
+                    link: "/images/emoji/bread.gif",
+                    index: 1,
+                    type: "registered"
                 }
             ]
         };

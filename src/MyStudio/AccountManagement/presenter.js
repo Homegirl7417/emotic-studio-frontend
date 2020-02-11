@@ -2,7 +2,6 @@ import React from "react";
 import SubPageTemplate from "../../SubPageTemplate";
 import SubPageCompleteButton from "../../SubPageContents/SugPageCompleteButton";
 import Profile from "./profile";
-import ImageUploadContent from "./ImageUploadContent";
 
 import '../scss/AccountManagement.scss';
 
@@ -13,8 +12,7 @@ class AccountManagement extends React.Component {
                 header="마이 스튜디오"
                 data={navigationData}
                 contentsJSX={[<Profile />]}
-                completeButton={<SubPageCompleteButton text="정보 수정하기" />
-            }
+                completeButton={<SubPageCompleteButton text="정보 수정하기" />}
             />
         );
     }

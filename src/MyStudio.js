@@ -1,9 +1,10 @@
 import React from "react";
 
-import StickerRegister from "./MyStudio/StickerRegister/index";
+import StickerRegister from "./MyStudio/StickerRegister";
 import StickerManage from "./MyStudio/StickerManagement";
-import OneStickerManagement from "./MyStudio/OneStickerManagement";
-import OneStickerExamine from './MyStudio/OneStickerExamine';
+import StickerRegistered from "./MyStudio/OneStickerManagement"
+import StickerPending from './MyStudio/StickerPending/presenter.js';
+import StickerRejected from './MyStudio/StickerRejected';
 import AccountManagement from "./MyStudio/AccountManagement/presenter.js";
 import Wallet from "./MyStudio/Wallet/presenter.js";
 
@@ -15,6 +16,7 @@ class MyStudio extends React.Component {
     render() {
         return (
             <div className="my-studio">
+                {console.log("MyStudio.js의 라우터들이 받을 수 있는 props들: ", this.props)}
                 <Route
                     exact
                     path="/mystudio/sticker-register"
@@ -34,6 +36,21 @@ class MyStudio extends React.Component {
                     exact
                     path="/mystudio/wallet"
                     component={Wallet}
+                ></Route>
+                <Route
+                    exact
+                    path="/mystudio/rejected/:index"
+                    component={StickerRejected}
+                ></Route>
+                <Route
+                    exact
+                    path="/mystudio/pending/:index"
+                    component={StickerPending}
+                ></Route>
+                <Route
+                    exact
+                    path="/mystudio/registered/:index"
+                    component={StickerRegistered}
                 ></Route>
             </div>
         );

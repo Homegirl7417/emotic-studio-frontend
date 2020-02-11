@@ -17,8 +17,40 @@
         margin: auto 0;
         text-align: end;
     }
+    &__profile-image {
+        display: flex;
+        width: 550px;
+    }
+    &__image-upload-content {
+        width: 100px;
+        height: 100px;
+        border-radius: 15px;
+        border: 1px solid #ebebeb;
+        background-color: #fdfdfd;
+        outline: none;
+        cursor: pointer;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+    &__image-upload-content:hover {
+        border: 1px solid #ea5433;
+        .account-management__plus-icon {
+            color: #ea5433;
+        }
+    }
+    &__plus-icon {
+        font-size: 3rem;
+        color: #d1d1d1;
+        transition: color 0.5s;
+    }
+    
+    &__input-element {
+        opacity: 0;
+        cursor: pointer;
+    }
     &__account {
-        width: 600px;
+        width: 550px;
         height: 30px;
         line-height: 30px;
         color: #000000;
@@ -34,7 +66,11 @@
     }
 }
 
-#whiteStyle {
+.whiteStyle {
     background-color: #FFFFFF;
     border: none;
+}
+
+.profile-style {
+    margin: 0;
 }

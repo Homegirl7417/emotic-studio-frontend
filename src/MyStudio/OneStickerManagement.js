@@ -41,7 +41,7 @@ class StickerManagementInformation extends React.Component {
         return (
             <div className="one-sticker-management">
                 <SubPageStaticContentTemplate title="스티커 종류">
-                    <Chip label="Animated Sticker"></Chip>
+                    <span style={{ fontWeight: "500", fontSize: "1.5rem" }} >Animated Sticker</span>
                 </SubPageStaticContentTemplate>
                 <SubPageStaticContentTemplate title="스티커 이름">
                     헬로! 라이언

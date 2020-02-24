@@ -18,10 +18,10 @@ class Container extends Component {
     language:"",
     stickers:[],
     checkedValues:[],
+    stickerCount: 24
   };
   render(){
-    
-    return (
+     return (
       <>
       {console.log("스티커등록의 container.js/ stickerRegisterpart1에 넘겨주는 state와props들: ",this.state, this.props)}
       <StickerRegisterPart1 
@@ -31,6 +31,7 @@ class Container extends Component {
       handleImageChange={this._handleImageChange}
       handleCheck={this._handleCheck}
       checkingValue={this._checkingValue}
+      checkingStickerCount={this._checkingStickerCount}
       />
       </>
     );
@@ -47,12 +48,19 @@ class Container extends Component {
   }
   _checkingValue = data =>{
     const result = (this.state.checkedValues.indexOf( data )!=-1)?true : false ; 
-    console.log(data,result)
+    console.log(data,result);
     return result;
   }
   _handleCheck = (data)=>{
+    
     let exCheckedValues = this.state.checkedValues;
     let isCheck = exCheckedValues.indexOf( data )
+    let count = data.slice(0,2);
+    if(!isNaN(count)) {
+      this.setState({
+        stickerCount: Number(count)
+      })
+    }
     if(isCheck != -1){
       exCheckedValues.splice(isCheck, 1);
     }else{
@@ -125,7 +133,37 @@ class Container extends Component {
        }
     })
   }
-  
+  // _checkingStickerCount = () => {
+  //   let checkingStickerCount = 0;
+  //   this.state.checkedValues.map(
+  //     (value) => {
+  //       if(value === "16종")  return (checkingStickerCount = 16);
+  //       if(value === "24종")  return (checkingStickerCount = 24);
+  //       if(value === "32종")  return (checkingStickerCount = 32);
+  //       if(value === "40종")  return (checkingStickerCount = 40);
+  //     }
+  //   )
+  //   this.setState({
+  //     stickerCount: checkingStickerCount
+  //   });
+  // }
+  // _checkingStickerCount = (data, result) => {
+  //     let checkingStickerCount = 0;
+  //     if((data==="16종")&&result) {checkingStickerCount = 16};
+  //     if((data==="24종")&&result) {checkingStickerCount = 24};
+  //     if((data==="32종")&&result) {checkingStickerCount = 32};
+  //     if((data==="40종")&&result) {checkingStickerCount = 40};
+  //     this.setState({
+  //       stickerCount: checkingStickerCount
+  //     });
+  // }
+  _checkingStickerCount = (data, result) => {
+    if((data==="16종")&&result) return 16;
+    if((data==="24종")&&result) return 24;
+    if((data==="32종")&&result) return 32;
+    if((data==="40종")&&result) return 40;
+}
+
 }
 
 export default Container;

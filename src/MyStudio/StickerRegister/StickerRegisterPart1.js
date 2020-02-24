@@ -26,6 +26,7 @@ const StickerRegisterPart1 = (props) =>{
                     handleCheck={props.handleCheck}
                     checkedValues={props.checkedValues}
                     checkingValue={props.checkingValue}
+                    checkingStickerCount={props.checkingStickerCount}
                 />
                 <TextAreaContent
                     title="스티커 이름"

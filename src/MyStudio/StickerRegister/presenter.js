@@ -27,7 +27,8 @@ class StickerRegister extends React.Component {
         handleInputChange:PropTypes.func.isRequired,
         handleImageChange:PropTypes.func.isRequired,
         handleCheck:PropTypes.func.isRequired,
-        checkingValue:PropTypes.func.isRequired
+        checkingValue:PropTypes.func.isRequired,
+        stickerCount:PropTypes.number.isRequired
     };
     render() {
         return (
@@ -51,7 +52,7 @@ const stickerRegisterComponentsList = (props) => [
         handleCheck={props.handleCheck}
         checkingValue={props.checkingValue}
     />,
-    <ImageUploadContent title="스티커 파일 업로드" handleImageChange={props.handleImageChange} stickers={props.stickers}/>
+    <ImageUploadContent title="스티커 파일 업로드" handleImageChange={props.handleImageChange} stickers={props.stickers} stickerCount={props.stickerCount}/>
 ];
 
 const navigationData = [

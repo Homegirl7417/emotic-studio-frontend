@@ -6,6 +6,7 @@ class ImageUploadContent extends React.Component {
     static propTypes={
         handleImageChange:PropTypes.func.isRequired,
         stickers:PropTypes.array.isRequired,
+        stickerCount:PropTypes.number.isRequired
     };
     constructor() {
         super();
@@ -49,9 +50,11 @@ class ImageUploadContent extends React.Component {
         });
     }
     render() {
-        const { handleImageChange,stickers } = this.props;
+        const { handleImageChange,stickers,stickerCount } = this.props;
         return (
             <div className="image-upload-content">
+                {console.log("**StickerRegister/ImageUploadContent.js의 props: ", this.props)}
+                {console.log("imageOn: ", this.state.imageOn)}
                 <div className="image-upload-content__title">
                     {this.props.title}
                     <span style={{ color: "red", fontSize: "1.0rem" }}> *</span>
@@ -60,7 +63,7 @@ class ImageUploadContent extends React.Component {
                     </div>
                 </div>
                 <div className="image-upload-content__grid-wrapper">
-                    {[...Array(24).keys()].map((key, idx) => {
+                    {[...Array(stickerCount).keys()].map((key, idx) => {
                         if (stickers[idx]) {
                             return (
                                 <>

@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "df71d0648098595eed09403562625f78",
+    "revision": "2916ddefc0fc70bc6a785730013a21a8",
     "url": "/emotic-studio-frontend/index.html"
   },
   {
-    "revision": "0b8ae7ed7dd75328ee87",
+    "revision": "93438ada4b4c885ceb74",
     "url": "/emotic-studio-frontend/static/css/main.6c01b044.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/emotic-studio-frontend/static/js/2.8e18eed5.chunk.js"
   },
   {
-    "revision": "0b8ae7ed7dd75328ee87",
-    "url": "/emotic-studio-frontend/static/js/main.10959118.chunk.js"
+    "revision": "93438ada4b4c885ceb74",
+    "url": "/emotic-studio-frontend/static/js/main.9f0c3314.chunk.js"
   },
   {
     "revision": "1beacbd185d5f23e31f2",

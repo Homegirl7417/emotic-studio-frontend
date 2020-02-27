@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/emotic-studio-frontend/static/css/main.6c01b044.chunk.css",
-    "main.js": "/emotic-studio-frontend/static/js/main.0538da2c.chunk.js",
-    "main.js.map": "/emotic-studio-frontend/static/js/main.0538da2c.chunk.js.map",
+    "main.js": "/emotic-studio-frontend/static/js/main.6f8feefc.chunk.js",
+    "main.js.map": "/emotic-studio-frontend/static/js/main.6f8feefc.chunk.js.map",
     "runtime-main.js": "/emotic-studio-frontend/static/js/runtime-main.35111598.js",
     "runtime-main.js.map": "/emotic-studio-frontend/static/js/runtime-main.35111598.js.map",
     "static/js/2.8e18eed5.chunk.js": "/emotic-studio-frontend/static/js/2.8e18eed5.chunk.js",
     "static/js/2.8e18eed5.chunk.js.map": "/emotic-studio-frontend/static/js/2.8e18eed5.chunk.js.map",
     "index.html": "/emotic-studio-frontend/index.html",
-    "precache-manifest.241a99cfe7858d0ea97e13e260d7a610.js": "/emotic-studio-frontend/precache-manifest.241a99cfe7858d0ea97e13e260d7a610.js",
+    "precache-manifest.d7e7598c11952276506b78631e6771d5.js": "/emotic-studio-frontend/precache-manifest.d7e7598c11952276506b78631e6771d5.js",
     "service-worker.js": "/emotic-studio-frontend/service-worker.js",
     "static/css/main.6c01b044.chunk.css.map": "/emotic-studio-frontend/static/css/main.6c01b044.chunk.css.map"
   },
@@ -16,6 +16,6 @@
     "static/js/runtime-main.35111598.js",
     "static/js/2.8e18eed5.chunk.js",
     "static/css/main.6c01b044.chunk.css",
-    "static/js/main.0538da2c.chunk.js"
+    "static/js/main.6f8feefc.chunk.js"
   ]
 }
